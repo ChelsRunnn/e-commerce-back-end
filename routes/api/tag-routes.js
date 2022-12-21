@@ -64,24 +64,6 @@ router.put('/:id', async (req, res) => {
 });
 
 // delete on tag by its `id` value
-// router.delete('/:id', async (req, res) => {
-//   try {
-//     const tagData = await Tag.destroy({
-//       where: {
-//         id: req.params.id,
-//       },
-//     })
-//     // If no category exists with the given id, throw 404 status & added message
-//     if (!tagData) {
-//       res.status(404).json({ message: 'No tag found with that id!' });
-//       return;
-//     }
-//     // Otherwise, throw successful 200 status message
-//     res.status(200).json(tagData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 router.delete('/:id', async (req, res) => {
   if (req.params.id) {
     const tagData = await Tag.destroy({
